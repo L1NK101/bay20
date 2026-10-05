@@ -1,0 +1,7 @@
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--clr-bg);
+  z-index: 5000;
+  pointer-events: all;
+}

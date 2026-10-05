@@ -1,0 +1,177 @@
+.tl-screen {
+  background: #0a0908;
+  padding: 6rem 1.5rem;
+  min-height: auto;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.tl-inner {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Big number */
+.tl-hero-wrap {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.tl-big-number {
+  font-family: var(--font-serif);
+  font-size: clamp(10rem, 35vw, 26rem);
+  font-weight: 300;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(245, 240, 232, 0.12);
+  background: linear-gradient(
+    160deg,
+    rgba(201, 168, 76, 0.5) 0%,
+    rgba(245, 240, 232, 0.15) 50%,
+    rgba(139, 58, 58, 0.3) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  user-select: none;
+  position: relative;
+}
+
+.tl-big-number::before {
+  content: attr(data-num);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  filter: blur(40px);
+  opacity: 0.15;
+  background: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  z-index: -1;
+}
+
+.tl-big-sub {
+  color: var(--clr-muted);
+  margin-top: 1.5rem;
+}
+
+/* Header */
+.tl-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* List */
+.tl-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Vertical line */
+.tl-line {
+  position: absolute;
+  left: 3.2rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(201, 168, 76, 0.2), transparent);
+}
+
+/* Item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 6.4rem 1fr;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(245, 240, 232, 0.04);
+  align-items: start;
+  position: relative;
+}
+
+.tl-item:last-child { border-bottom: none; }
+
+/* Number / dot column */
+.tl-number-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding-top: 0.3rem;
+}
+
+.tl-number {
+  color: var(--clr-gold);
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+
+.tl-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-gold);
+  background: var(--clr-bg);
+  margin-right: -0.2rem;
+  flex-shrink: 0;
+}
+
+/* Content */
+.tl-content { padding-bottom: 0.5rem; }
+
+.tl-era {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 400;
+  color: var(--clr-cream);
+  margin-bottom: 0.7rem;
+  line-height: 1.2;
+}
+
+.tl-desc {
+  color: var(--clr-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .tl-screen { padding: 4rem 1rem; }
+  .tl-item { grid-template-columns: 4rem 1fr; gap: 1rem; }
+  .tl-line { left: 2rem; }
+}
+
+/* ── Age/20 Section Styles ─────────────────────────────────── */
+.tl-twenty-shout {
+  color: var(--clr-muted);
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  text-transform: lowercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.tl-twenty-title {
+  color: var(--clr-gold);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  line-height: 1.05;
+}
+
+.tl-twenty-message {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--clr-muted);
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  line-height: 1.9;
+  font-style: italic;
+  border-left: 2px solid rgba(201, 168, 76, 0.25);
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+.tl-header {
+  text-align: center;
+}
+

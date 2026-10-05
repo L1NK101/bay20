@@ -1,0 +1,204 @@
+/* -- Gift Reveal Section ---------------------------------- */
+.gift-reveal-screen {
+  background: #0d0c0a;
+  padding: 10rem 1.5rem;
+  min-height: auto;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-reveal-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.gift-reveal-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+}
+
+/* -- Transition Block ------------------------------------ */
+.gift-transition-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.gift-tr-heading {
+  color: var(--clr-muted);
+  font-style: italic;
+}
+
+.gift-tr-shout {
+  color: var(--clr-cream);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+/* -- Divider --------------------------------------------- */
+.gift-reveal-divider {
+  transform-origin: center top;
+}
+
+/* -- Preamble (behold, my networth) --------------------- */
+.gift-reveal-preamble {
+  color: var(--clr-muted);
+  font-style: italic;
+}
+
+/* -- Drumroll text --------------------------------------- */
+.gift-drumroll-text {
+  color: var(--clr-gold);
+  letter-spacing: 0.25em;
+  font-size: 0.8rem;
+  animation: drumroll-pulse 0.18s ease-in-out infinite alternate;
+}
+
+@keyframes drumroll-pulse {
+  from { opacity: 0.7; transform: scale(1); }
+  to   { opacity: 1; transform: scale(1.04); }
+}
+
+.gift-drumroll-dots {
+  display: inline-block;
+  animation: dots-blink 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes dots-blink {
+  from { opacity: 0.3; }
+  to   { opacity: 1; }
+}
+
+/* -- Curtain Stage --------------------------------------- */
+.gift-curtain-stage {
+  position: relative;
+  width: 100%;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+/* Curtain panels */
+.gift-curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: linear-gradient(
+    to bottom,
+    #1a1208 0%,
+    #231908 40%,
+    #1a1208 100%
+  );
+  z-index: 2;
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.5);
+}
+
+.gift-curtain--left {
+  left: 0;
+  transform-origin: left center;
+  border-right: 1px solid rgba(201, 168, 76, 0.15);
+  background: linear-gradient(
+    to right,
+    #231a08,
+    #1a1208
+  );
+}
+
+.gift-curtain--right {
+  right: 0;
+  transform-origin: right center;
+  border-left: 1px solid rgba(201, 168, 76, 0.15);
+  background: linear-gradient(
+    to left,
+    #231a08,
+    #1a1208
+  );
+}
+
+/* Decorative curtain folds (vertical lines) */
+.gift-curtain--left::before,
+.gift-curtain--left::after,
+.gift-curtain--right::before,
+.gift-curtain--right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.gift-curtain--left::before  { left: 25%; }
+.gift-curtain--left::after   { left: 60%; }
+.gift-curtain--right::before { right: 25%; }
+.gift-curtain--right::after  { right: 60%; }
+
+/* -- Amount Reveal --------------------------------------- */
+.gift-reveal-amount-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.gift-reveal-amount {
+  color: var(--clr-gold);
+  background: linear-gradient(135deg, #e8c86e, #c9a84c, #a07830);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 0.9;
+  text-shadow: none;
+  filter: drop-shadow(0 0 60px rgba(201, 168, 76, 0.5));
+}
+
+/* -- Post-reveal message --------------------------------- */
+.gift-reveal-message {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  max-width: 560px;
+}
+
+.gift-msg-line1 {
+  color: var(--clr-muted);
+  font-style: italic;
+}
+
+.gift-msg-line2 {
+  color: var(--clr-cream);
+  line-height: 1;
+}
+
+.gift-msg-line3 {
+  color: var(--clr-muted);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .gift-reveal-screen { padding: 6rem 1rem; }
+  .gift-curtain-stage { min-height: 180px; }
+}

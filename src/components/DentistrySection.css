@@ -1,0 +1,119 @@
+/* -- Career Section --------------------------------------- */
+.dentistry-screen {
+  background: #0d0c0a;
+  padding: 6rem 1.5rem;
+  min-height: auto;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.career-inner {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* Header */
+.career-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.career-title {
+  color: var(--clr-cream);
+  line-height: 1.15;
+  font-style: italic;
+}
+
+/* Three-card grid */
+.career-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 860px) {
+  .career-cards {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+/* Card */
+.career-card {
+  background: linear-gradient(150deg, #141210, #100e0c);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  transition: border-color 0.3s;
+}
+
+.career-card:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+/* Image */
+.career-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.career-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: grayscale(30%) contrast(1.05);
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.career-card:hover .career-card-img {
+  transform: scale(1.04);
+  filter: grayscale(0%) contrast(1.1);
+}
+
+.career-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(10, 9, 8, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
+/* Card body */
+.career-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.08);
+}
+
+.career-card-title {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 400;
+  color: var(--clr-cream);
+  line-height: 1.2;
+}
+
+.career-card-text {
+  color: var(--clr-muted);
+  letter-spacing: 0.1em;
+  font-size: 0.65rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .dentistry-screen { padding: 4rem 1rem; }
+}
